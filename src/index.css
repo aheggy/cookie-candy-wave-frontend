@@ -68,6 +68,7 @@ button a {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid green;
+
 }
 
 .product {
@@ -146,3 +147,43 @@ input[type="submit"] {
   display: flex;
   justify-content: center;
 }
+
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 0px;
+  width: 90px;
+}
+
+.quantity-button {
+  background-color: rgb(165, 93, 42);
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-to-cart-button {
+  background-color: rgb(165, 93, 42);
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.quantity-input {
+  border: none;
+  padding: 0px;
+  width: 30px;
+  text-align: center; 
+  outline: none;
+}
+
