@@ -4,6 +4,9 @@ export default function NavBar(){
     return(
         <nav>
             <h1>
+                <Link to="/">Home</Link>
+            </h1>
+            <h1>
                 <Link to="/products">Products</Link>
             </h1>
             <button>
