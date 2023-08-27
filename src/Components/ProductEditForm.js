@@ -12,12 +12,11 @@ export default function ProductEditForm() {
     product_type: "",
     calories: "",
     price: "",
-    last_updated: "",
     url: "",
     is_favorite: false,
   });
 
-  const updateProduct = (updatedProduct) => {
+  const updateProduct = (updatedProduct, id) => {
     axios
       .put(`${API}/products/${id}`, updatedProduct)
       .then(
@@ -30,11 +29,7 @@ export default function ProductEditForm() {
   };
 
   const handleTextChange = (event) => {
-    if (event.target.id === "last_updated") {
-      setProduct({ ...product, last_updated: new Date().toISOString() });
-    } else {
-      setProduct({ ...product, [event.target.id]: event.target.value });
-    }
+    setProduct({ ...product, [event.target.id]: event.target.value });
   };
 
   const handleCheckboxChange = () => {
@@ -91,7 +86,7 @@ export default function ProductEditForm() {
           placeholder="price"
           required
         />
-        <label htmlFor="last_updated">last_updated:</label>
+        {/* <label htmlFor="last_updated">last_updated:</label>
         <input
           id="last_updated"
           value={product.last_updated}
@@ -99,7 +94,7 @@ export default function ProductEditForm() {
           onChange={handleTextChange}
           placeholder="last_updated"
           required
-        />
+        /> */}
 
         <label htmlFor="url">Image URL:</label>
         <input

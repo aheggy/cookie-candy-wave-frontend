@@ -22,7 +22,10 @@ export default function Product({ product }) {
           {product.product_type.toUpperCase()}
         </span>
       </p>
-      <img src={product.url} alt={product.product_name} />
+      <Link to={`/products/${product.id}`}>
+        <img src={product.url} alt={product.product_name} />
+      </Link>
+      <span className="bold">{product.product_name}</span>
       <p className="label">
         <span className="bold">Price: </span>${product.price}
       </p>
@@ -30,9 +33,6 @@ export default function Product({ product }) {
         <span className="bold">Favorite:</span>{" "}
         {product.is_favorite ? <span>⭐</span> : <span>✩</span>}
       </p>
-      <Link to={`/products/${product.id}`}>
-        <span className="bold">{product.product_name}</span>
-      </Link>
       <div className="product-details">
         <div className="quantity-box">
           <button

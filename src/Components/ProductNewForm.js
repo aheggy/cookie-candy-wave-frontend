@@ -24,7 +24,6 @@ export default function ProductNewForm() {
     product_type: "",
     calories: "",
     price: "",
-    last_updated: "",
     url: "",
     is_favorite: false,
   });
@@ -33,9 +32,9 @@ export default function ProductNewForm() {
     setProduct({ ...product, [event.target.id]: event.target.value });
   };
 
-  const handleCheckboxChange = () => {
-    setProduct({ ...product, is_favorite: !product.is_favorite });
-  };
+  const handleCheckboxChange = (event) => {
+    setProduct({ ...product, is_favorite: event.target.checked });
+  };  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -80,7 +79,7 @@ export default function ProductNewForm() {
           placeholder="price"
           required
         />
-        <label htmlFor="last_updated">last_updated:</label>
+        {/* <label htmlFor="last_updated">last_updated:</label>
         <input
           id="last_updated"
           value={product.last_updated}
@@ -88,7 +87,7 @@ export default function ProductNewForm() {
           onChange={handleTextChange}
           placeholder="last_updated"
           required
-        />
+        /> */}
 
         <label htmlFor="url">Image URL:</label>
         <input
